@@ -1,4 +1,4 @@
-"use strict";
+/* "use strict";
 
 // ---------------------------------Activating Strik Mode
 let hasDrivingLincence = false;
@@ -52,3 +52,58 @@ console.log(age1);
 }
 const age2 = calcAge2(1991);
 console.log(age1, age2);
+
+ 
+
+// ---------------------------------Arrow Funktions 
+
+const calcAge3 = birthyear => 2037 - birthyear;
+const age3 = calcAge3(1991);
+console.log(age3);
+const YearsUntilRetirement = (birthyear, firstName) => {  
+const age = 2037 - (birthyear);
+    const retirement =  65 - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} year`;
+}
+
+console.log(YearsUntilRetirement(1991, 'Ona'));
+console.log(YearsUntilRetirement(1980, 'BOna'));
+
+
+// ----------------------------Functions Calling Other Functions
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+function fruitProcessor(apples, oranges){
+const applesPieces = cutFruitPieces(apples);
+const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applesPieces} pieces of apples and ${orangePieces} pieces of oranges.`;
+    return(juice);
+}
+// fruitProcessor (2, 3);
+
+console.log(fruitProcessor(2, 3));
+
+*/
+//--------------------Reviewing Functions
+
+const calcAge = function (birthYear){
+    return 2037 - birthYear;
+}
+const YearsUntilRetirement = function(birthYear, firstName)  {
+     const age = calcAge(birthYear);
+    const retirement = 65 - age; 
+
+    if(retirement > 0){
+        console.log(`${firstName} retires in ${retirement} years`);
+        return retirement;
+    }else{
+        console.log(`${firstName} has allready retired 🤘`);
+        return -1;
+    }
+}
+console.log(YearsUntilRetirement(1991, 'Ona'));
+console.log(YearsUntilRetirement(1950, 'BOna'));
